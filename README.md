@@ -1,3 +1,7 @@
+# plus-challenge
+Front end implementation challenge for PLUS
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
