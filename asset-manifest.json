@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/plus-challenge/static/css/main.042a66c0.css",
+    "main.js": "/plus-challenge/static/js/main.c641d8b8.js",
+    "static/js/453.45fd5eef.chunk.js": "/plus-challenge/static/js/453.45fd5eef.chunk.js",
+    "static/media/rooney.jpg": "/plus-challenge/static/media/rooney.4023f163fde29a3ed4f9.jpg",
+    "index.html": "/plus-challenge/index.html",
+    "main.042a66c0.css.map": "/plus-challenge/static/css/main.042a66c0.css.map",
+    "main.c641d8b8.js.map": "/plus-challenge/static/js/main.c641d8b8.js.map",
+    "453.45fd5eef.chunk.js.map": "/plus-challenge/static/js/453.45fd5eef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.042a66c0.css",
+    "static/js/main.c641d8b8.js"
+  ]
+}
