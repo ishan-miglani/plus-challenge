@@ -2,6 +2,10 @@ import React from 'react';
 import { Box, Text, Link } from '@primer/react';
 import '../App.css';
 
+/**
+ * Contact component
+ * This component renders the contact section
+ */
 const Contact = () => {
   return (
     <section id="contact-section" className="contact-section">
@@ -9,7 +13,7 @@ const Contact = () => {
         <Text className="tab-title">Contact</Text>
         <Box>
         
-        
+
         <Text className="contact-section-text-headings" as="p">
         <Link as="a" href="https://www.linkedin.com/in/ishanmiglani/" target="_blank">LinkedIn</Link>
         </Text>

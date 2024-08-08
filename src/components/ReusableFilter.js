@@ -1,23 +1,36 @@
 import React from "react";
-import { ActionMenu, ActionList, Box, Text, Heading} from "@primer/react";
+import { ActionMenu, ActionList, Box, Text} from "@primer/react";
 import '../App.css';
 
+/**
+ * ReusableFilter component
+ * This component provides a filter functionality with animated selection and deselection of options.
+ * @param {Array} providedOptions - The initial set of options to display.
+ */
 function ReusableFilter({providedOptions}) { 
+      // State to manage the current set of options
       const [options, setOptions] = React.useState(providedOptions);
 
+      // State to manage the previous set of options for animation purposes - fade out 
       const [prevOptions, setPrevOptions] = React.useState(providedOptions);
+      // State to manage the fading animation
       const [isFading, setIsFading] = React.useState(false);
 
+      // Effect hook to initialize prevOptions on component mount
       React.useEffect(() => {
         setPrevOptions(options.map(option => ({ ...option }))); // Initialize prevOptions on mount
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
+      // Toggles the selected options in the ActionMenu
       const toggle = (name) => {
-        if (isFading) return; // Prevent toggling while an animation is in progress
+        // Prevent toggling while an animation is in progress
+        if (isFading) return; 
     
         setIsFading(true);
-        setPrevOptions(options.map(option => ({ ...option }))); // Save current options state
+        setPrevOptions(options.map(option => ({ ...option })));
     
+        //Update options after fade-out animation
         setTimeout(() => {
           setOptions(options.map(option => {
             if (option.name === name) option.selected = !option.selected;
@@ -30,7 +43,8 @@ function ReusableFilter({providedOptions}) {
       const getSelectedOptionsCount = () => {
         return options.filter(option => option.selected).length;
       };
-
+      
+      // Get the width for each box based on the number of selected options
       const getBoxWidth = () => {
         const selectedCount = getSelectedOptionsCount();
         if (selectedCount === 1) return '100%';
@@ -39,6 +53,7 @@ function ReusableFilter({providedOptions}) {
         return '25%';
       };
 
+      // Get the view text based on the selected options
       const getViewText = () => {
         const selectedOptions = options.filter(option => option.selected);
         if (selectedOptions.length === 0) return "View: None";
@@ -46,6 +61,12 @@ function ReusableFilter({providedOptions}) {
         return `View: ${selectedOptions.map(option => option.name).join(", ")}`;
       };
 
+      /**
+       * Render the boxes for both the fade out and fade in animations
+       * @param {Array} optionsToRender - The options to render
+       * @param {string} animationClass - The animation class to apply
+       * @returns {Array} The list of rendered boxes
+      */
       const renderBoxes = (optionsToRender, animationClass) => {
         return optionsToRender
           .filter(option => option.selected)
@@ -79,7 +100,6 @@ function ReusableFilter({providedOptions}) {
             </ActionMenu.Overlay>
 
           </ActionMenu>
-          {/* <Box className="reusable-cards-container"> */}
           <Box sx={{ 
             display: 'flex', 
             width: 'var(--breakpoint-medium)', 

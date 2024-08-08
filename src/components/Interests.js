@@ -4,10 +4,14 @@ import ReusableFilter from './ReusableFilter';
 import { Text } from '@primer/react';
 import interestsOptions from '../data/interestsSampleData.json';
 
+/**
+ * Interests component
+ * This component renders the "Interests" section with a title and a reusable filter component.
+ */
 const Interests = () => {
   return (
-    <section id="interests-section" >
-      <Text className="tab-title" sx={{marginTop:'0.5em', marginBottom:'0.5em'}}>Interests</Text>
+    <section id="interests-section" className="interests-section" >
+      <Text className="tab-title">Interests</Text>
       <ReusableFilter providedOptions={interestsOptions}/>
     </section>
   );

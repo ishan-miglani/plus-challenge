@@ -1,8 +1,11 @@
-// src/components/About.js
+
 import React from 'react';
 import { Box, Text } from '@primer/react';
 import rooneyImg from '../data/rooney.jpg';
 
+/**
+ * About component
+ */
 const About = () => {
   return (
     <section id="about-section" className="about-section">

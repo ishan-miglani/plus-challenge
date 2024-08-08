@@ -1,34 +1,3 @@
-.ml-4 {
-    margin-left: 16px;
-}
-
-.anim-fade-in.custom-fade {
-    animation-duration: 0.25s !important;
-  }
-
-.anim-fade-out.custom-fade {
-    animation-duration: 0.25s !important;
-  }
-
-.tab-border {
-    border-width: 1px, 1px, 0px, 1px;
-    border-style: solid;
-    border-color: var(--borderColor-default, rgba(208, 215, 222, 1));
-}
-
-
-
-.tab-box {
-    padding: var(--spacexlarge);
-    gap: 0;
-}
-
-
-
-
-/* -------------------FIXING THE STYLING------------------- */
-
-
 .padding-main-container {
     padding: var(--stack-padding-spacious);
     gap: var(--space-xsmall);
@@ -130,6 +99,13 @@ text-align: left; */
     gap: var(--stack-gap-spacious); 
 }
 
+.interests-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xlarge);
+    gap: var(--stack-gap-spacious); 
+}
+
 .reusable-card-section {
     display: flex;
     flex-direction: column;
@@ -199,3 +175,13 @@ text-align: left; */
     line-height: var(--text-body-lineHeight-large);
     text-align: left;
 }
+
+/* -------------------ANIMATIONS------------------- */
+
+.anim-fade-in.custom-fade {
+    animation-duration: 0.25s !important;
+  }
+
+.anim-fade-out.custom-fade {
+    animation-duration: 0.25s !important;
+  }
