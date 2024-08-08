@@ -63,18 +63,15 @@ function App() {
   return (
     <ThemeProvider>
       <BaseStyles>
-      <Box sx={{margin: '2em'}}>
-        <div>
-          <Navbar onSelectTab={handleTabSelect} selectedTab={selectedTab} />
-
-          {/* <div className="anim-fade-in custom-fade" key={selectedTab}>
-            {renderSection()}
-          </div> */}
-
+      <Box className="padding-main-container">
+        <Box className="padding-large">
+          <Navbar className="padding-large" onSelectTab={handleTabSelect} selectedTab={selectedTab} />
+          </Box>
+          <Box>
           <div className={isFading ? 'anim-fade-out custom-fade' : 'anim-fade-in custom-fade'}>
               {isFading ? renderPrevSection() : renderSection()}
           </div>
-        </div>
+        </Box>
       </Box>
        
       </BaseStyles>

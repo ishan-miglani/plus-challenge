@@ -1,5 +1,6 @@
 import React from "react";
-import { ActionMenu, ActionList, Box, Text } from "@primer/react";
+import { ActionMenu, ActionList, Box, Text, Heading} from "@primer/react";
+import '../App.css';
 
 function ReusableFilter({providedOptions}) { 
       const [options, setOptions] = React.useState(providedOptions);
@@ -10,13 +11,6 @@ function ReusableFilter({providedOptions}) {
       React.useEffect(() => {
         setPrevOptions(options.map(option => ({ ...option }))); // Initialize prevOptions on mount
       }, []);
-
-      // const toggle = (name) => {
-      //   setOptions(options.map(option => {
-      //     if (option.name === name) option.selected = !option.selected;
-      //     return option;
-      //   }));
-      // };
 
       const toggle = (name) => {
         if (isFading) return; // Prevent toggling while an animation is in progress
@@ -42,7 +36,7 @@ function ReusableFilter({providedOptions}) {
         if (selectedCount === 1) return '100%';
         if (selectedCount === 2) return '50%';
         if (selectedCount === 3) return '33.33%';
-        return '25%'; // For 4 or more boxes
+        return '25%';
       };
 
       const getViewText = () => {
@@ -56,41 +50,26 @@ function ReusableFilter({providedOptions}) {
         return optionsToRender
           .filter(option => option.selected)
           .map(option => (
-            // <Box
-            //   key={option.name}
-            //   className={animationClass}
-            //   sx={{
-            //     flex: '0 1 calc(25% - 16px)',
-            //     padding: 3,
-            //     margin: 2,
-            //     borderRadius: 2,
-            //   }}
-            // >
-            //   <Text as="p"><strong>{option.name}</strong></Text>
-            //   <Text>{option.description}</Text>
-            // </Box>
             <Box
               key={option.name}
               className={animationClass}
               sx={{
                 flex: `0 1 ${getBoxWidth()}`,
-                padding: 3,
-                margin: 2,
-                borderRadius: 2,
-                backgroundColor: 'white',
               }}
             >
-              <Text as="p"><strong>{option.name}</strong></Text>
-              <Text>{option.description}</Text>
+              <Text className="individual-card-title">{option.name}</Text>
+              <Text className="individual-card-description">{option.description}</Text>
             </Box>
             
           ));
       };
 
       return(
-        <div>
+        <Box className="reusable-card-section">
           <ActionMenu>
-            <ActionMenu.Button>{getViewText()}</ActionMenu.Button>
+
+            <ActionMenu.Button className="action-button">{getViewText()}</ActionMenu.Button>
+
             <ActionMenu.Overlay width="auto">
               <ActionList selectionVariant="multiple">
                 {options.map(options => <ActionList.Item key={options.name} selected={options.selected} onSelect={() => toggle(options.name)}>
@@ -98,13 +77,22 @@ function ReusableFilter({providedOptions}) {
                   </ActionList.Item>)}
               </ActionList>
             </ActionMenu.Overlay>
+
           </ActionMenu>
-          <Box className="boxes">
+          {/* <Box className="reusable-cards-container"> */}
+          <Box sx={{ 
+            display: 'flex', 
+            width: 'var(--breakpoint-medium)', 
+            height: 'auto', 
+            padding: 'var(--space-medium) 0', 
+            gap: 'var(--stack-gap-spacious)' }}>
+
             {isFading
-              ? renderBoxes(prevOptions, 'box color-shadow-medium anim-fade-out custom-fade')
-              : renderBoxes(options, 'box color-shadow-medium anim-fade-in custom-fade')}
+              ? renderBoxes(prevOptions, 'individual-card anim-fade-out custom-fade')
+              : renderBoxes(options, 'individual-card anim-fade-in custom-fade')}
+
           </Box>
-       </div>);
+       </Box>);
         
 }
 
