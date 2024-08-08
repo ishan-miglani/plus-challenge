@@ -1,6 +1,16 @@
 # plus-challenge
 Front end implementation challenge for PLUS
 
+## Components Description
+#### About.js, Contact.js, Interests.js, Skills.js 
+- These components are for the individual tabs in the navbar
+
+#### Navbar.js
+- This component represents the navigation bar at the top of the application, providing links to various sections such as About, Skills, Interests, and Contact. It is included in App.js
+#### ReusableFilter.js
+- This reusable component provides filter functionality. It is implemented in both the Skills and Interests components to filter and display specific data based on user selection.
+
+--------
 
 # Getting Started with Create React App
 
