@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Box, Text } from '@primer/react';
-import rooneyImg from '../data/rooney.jpg';
+import photo from '../data/photo.jpg';
 
 /**
  * About component
@@ -16,11 +16,11 @@ const About = () => {
       
         <Box className="about-content-panel">
         
-            <Box sx={{flex:1,display:'flex'}}>
-              <img src={rooneyImg} alt="Your Name" style={{height:'auto', width: '100%'}} />
+            <Box className="about-section-image-container">
+              <img src={photo} alt="Your Name" className="about-section-image" />
             </Box>
 
-            <Box sx={{ flex: 1 }}>
+            <Box className="about-section-text-container">
                 <Text className="about-section-text-headings" as="p"> City:&nbsp;
                   <Text as="span" className="about-section-text-description">
                     New York

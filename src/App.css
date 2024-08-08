@@ -1,4 +1,6 @@
 .padding-main-container {
+    display: flex;
+    flex-direction: column;
     padding: var(--stack-padding-spacious);
     gap: var(--space-xsmall);
     background: var(--bgColor-default, rgba(255, 255, 255, 1));
@@ -16,25 +18,12 @@
 
 }
 
-/* //styleName: Display; */
-/* font-family: SF Pro Text;
-font-size: 40px;
-font-weight: 500;
-line-height: 56px;
-text-align: left; */
 .tab-title {
     font-weight: var(--text-display-weight); 
     font-size: var(--text-display-size); 
     line-height: var(--text-display-lineHeight);
 }
 
-
-/* //styleName: Body/Large Bold;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-text-align: left; */
 .contact-section-text-headings {
     font-size: var(--text-body-size-large);
     font-weight: var(--base-text-weight-semibold);
@@ -42,14 +31,6 @@ text-align: left; */
     color: var(--fgColor-neutral, rgba(110, 119, 129, 1));
 }
 
-
-/* //styleName: Body/Large;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left; */
-/* only change in font weight */
 .contact-section-text-description {
     font-weight: var(--base-text-weight-normal);
 }
@@ -64,30 +45,28 @@ text-align: left; */
 .about-content-panel {
     gap: var(--stack-gap-spacious); 
     display: flex;
-    /* flex-direction: column; */
 }
 
+.about-section-image-container {
+    flex: 0 0 auto;
+}
 
-/* //styleName: Body/Large Bold;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-text-align: left; */
+.about-section-image {
+    height:auto;
+    width: auto;
+}
+
+.about-section-text-container {
+    flex: 0 0 auto;
+    height:max-content;
+}
+
 .about-section-text-headings {
     font-size: var(--text-body-size-large);
     font-weight: var(--base-text-weight-semibold);
     line-height: var(--text-body-lineHeight-large);
 }
 
-
-/* //styleName: Body/Large;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left; */
-/* only change in font weight */
 .about-section-text-description {
     font-weight: var(--base-text-weight-normal);
 }
@@ -117,11 +96,6 @@ text-align: left; */
    
 }
 
-/* width: var(--breakpointmedium);
-height: Hug (80px)px;
-padding: var(--spacemedium) 0px var(--spacemedium) 0px;
-gap: var(--stack-gap-spacious) /* utility class: .gap-4 */;
-/* opacity: 0px; */
 .reusable-cards-container {
     display: flex !important;
     width: var(--breakpoint-medium);
@@ -130,14 +104,6 @@ gap: var(--stack-gap-spacious) /* utility class: .gap-4 */;
     gap: var(--stack-gap-spacious);
 }
 
-
-
-/* width: Fill (240px)px;
-height: Hug (64px)px;
-padding: 8px var(--spacemedium) 0px var(--spacemedium);
-gap: 0px;
-border-radius: 12px 0px 0px 0px;
-opacity: 0px; */
 .individual-card {
     width: auto;
     padding: 8px var(--space-medium) 8px var(--space-medium);  
@@ -147,14 +113,6 @@ opacity: 0px; */
     border-radius: var(--borderRadius-medium);
 }
 
-
-/* //styleName: Title/Small;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-text-align: left; */
-
 .individual-card-title {
     font-size: var(--text-title-size-small);
     font-weight: var(--text-title-weight-small);
@@ -163,12 +121,6 @@ text-align: left; */
     text-align: left;
 }
 
-/* //styleName: Body/Large;
-font-family: SF Pro Text;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left; */
 .individual-card-description {
     font-size: var(--text-body-size-large);
     font-weight: var(--base-text-weight-normal);

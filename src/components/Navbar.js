@@ -1,11 +1,10 @@
-// src/components/Navbar.js
 import React from 'react';
 import { TabNav } from '@primer/react';
 
 function Navbar({ onSelectTab, selectedTab }) {
   return (
     <TabNav aria-label="Main">
-      <TabNav.Link href="#about" selected={selectedTab === 'about'} onClick={() => onSelectTab('about')}>
+      <TabNav.Link href="#about" selected={selectedTab === 'about'} className="ml-1" onClick={() => onSelectTab('about')}>
         About Me
       </TabNav.Link>
       <TabNav.Link href="#skills" selected={selectedTab === 'skills'} onClick={() => onSelectTab('skills')}>
